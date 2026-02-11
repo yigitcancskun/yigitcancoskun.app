@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ŞikayetLab - Türk Telekom şikayetlerini analiz eden makine öğrenmesi projesi. NLP ve Turkish-Gemma-9b-T1 ile duygu analizi ve konu sınıflandırması.">
+    <title>ŞikayetLab | Şikayet Analiz Platformu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-brand">
+                <div class="nav-brand-icon">Ş</div>
+                <span>ŞikayetLab</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#phases">Aşamalar</a></li>
+                <li><a href="#overview">Proje</a></li>
+                <li><a href="#feasibility">Fizibilite</a></li>
+                <li><a href="#tech">Teknoloji</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">
+                    <span class="highlight">ŞikayetLab</span><br>
+                    Şikayet Analiz Platformu
+                </h1>
+                <p class="hero-description fade-in stagger-1">
+                    Türk Telekom müşteri şikayetlerini yapay zeka ile analiz eden,
+                    NLP tabanlı makine öğrenmesi projesi. Şikayetvar verilerinden
+                    içgörü çıkararak operasyonel verimlilik sağlar.
+                </p>
+                <div class="hero-stats fade-in stagger-2">
+                    <div class="stat">
+                        <span class="stat-value">5</span>
+                        <span class="stat-label">Proje Aşaması</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Hafta Süre</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">Gemma-9b-T1</span>
+                        <span class="stat-label">Model Mimarisi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase Timeline -->
+    <section id="phases" class="section phases">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proje Yol Haritası</h2>
+                <p>5 aşamalı geliştirme sürecini takip edin</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Phase 1 - Active -->
+                <div class="phase-card active fade-in stagger-1">
+                    <div class="phase-number"><span>1</span></div>
+                    <div class="phase-content">
+                        <h4 class="phase-title">Düşünme Alanı</h4>
+                        <div class="phase-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            1 Hafta
+                        </div>
+                        <p class="phase-description">
+                            Proje kapsamı, yasal çerçeve (KVKK), veri toplama stratejisi ve teknik mimari planlaması.
+                        </p>
+                        <span class="phase-status in-progress">Devam Ediyor</span>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-card fade-in stagger-2">
+                    <div class="phase-number"><span>2</span></div>
+                    <div class="phase-content">
+                        <h4 class="phase-title">MVP Veri Toplama</h4>
+                        <div class="phase-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            2 Hafta
+                        </div>
+                        <p class="phase-description">
+                            Playwright ile Cloudflare bypass, veri kazıma altyapısı ve PII anonimleştirme.
+                        </p>
+                        <span class="phase-status upcoming">Bekliyor</span>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-card fade-in stagger-3">
+                    <div class="phase-number"><span>3</span></div>
+                    <div class="phase-content">
+                        <h4 class="phase-title">NLP & Modelleme</h4>
+                        <div class="phase-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            1 Hafta
+                        </div>
+                        <p class="phase-description">
+                            Türkçe metin normalizasyonu, Turkish-Gemma-9b-T1 fine-tuning ve duygu analizi modeli.
+                        </p>
+                        <span class="phase-status upcoming">Bekliyor</span>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="phase-card fade-in stagger-4">
+                    <div class="phase-number"><span>4</span></div>
+                    <div class="phase-content">
+                        <h4 class="phase-title">Altyapı</h4>
+                        <div class="phase-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            2 Hafta
+                        </div>
+                        <p class="phase-description">
+                            Prefect orkestrasyon, MLflow takibi, Docker konteynerizasyon ve deployment.
+                        </p>
+                        <span class="phase-status upcoming">Bekliyor</span>
+                    </div>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="phase-card fade-in stagger-5">
+                    <div class="phase-number"><span>5</span></div>
+                    <div class="phase-content">
+                        <h4 class="phase-title">İnce Ayar & Bitiş</h4>
+                        <div class="phase-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            1 Hafta
+                        </div>
+                        <p class="phase-description">
+                            Streamlit dashboard, performans optimizasyonu ve final testleri.
+                        </p>
+                        <span class="phase-status upcoming">Bekliyor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proje Kapsamı</h2>
+                <p>End-to-end makine öğrenmesi pipeline'ı</p>
+            </div>
+
+            <div class="project-content">
+                <!-- Data Collection -->
+                <div class="content-card fade-in">
+                    <div class="card-icon">🕷️</div>
+                    <h3>Veri Toplama Katmanı</h3>
+                    <p>
+                        Şikayetvar platformundan Türk Telekom şikayetlerini toplayan gelişmiş
+                        web scraping altyapısı. Cloudflare koruması, rate limiting ve KVKK
+                        uyumluluğu gözetilir.
+                    </p>
+                    <ul>
+                        <li>Playwright + Stealth tarayıcı otomasyonu</li>
+                        <li>Residential Proxy IP rotasyonu</li>
+                        <li>NER tabanlı PII anonimleştirme</li>
+                        <li>robots.txt ve yasal çerçeve uyumu</li>
+                    </ul>
+                </div>
+
+                <!-- NLP Processing -->
+                <div class="content-card fade-in stagger-1">
+                    <div class="card-icon">🔤</div>
+                    <h3>Türkçe NLP İşleme</h3>
+                    <p>
+                        Türkçe'nin agglutinatif yapısına özel metin normalizasyonu ve
+                        preprocessing pipeline'ı. Informal dil, yazım hataları ve
+                        kısaltmalar T5 tabanlı normalizasyon ile düzeltilir.
+                    </p>
+                    <ul>
+                        <li>De-asciification ve yazım düzeltme</li>
+                        <li>Zemberek morfolojik analiz</li>
+                        <li>Duygu koruyucu stop word listesi</li>
+                        <li>Lemmatization ile seyreklik azaltma</li>
+                    </ul>
+                </div>
+
+                <!-- Classification -->
+                <div class="content-card fade-in stagger-2">
+                    <div class="card-icon">🧠</div>
+                    <h3>Turkish-Gemma-9b-T1 Sınıflandırma</h3>
+                    <p>
+                        Şikayetleri otomatik kategorize eden ve müşteri kaybı riskini
+                        tahmin eden transformer tabanlı model. Fine-tuned Turkish-Gemma-9b-T1 ile
+                        Türkçe'ye özel yüksek doğruluk.
+                    </p>
+                    <ul>
+                        <li>5 ana konu kategorisi sınıflandırma</li>
+                        <li>Aspect-Based Sentiment Analysis (ABSA)</li>
+                        <li>Churn riski ve aciliyet skorlaması</li>
+                        <li>Multi-label etiketleme desteği</li>
+                    </ul>
+                </div>
+
+                <!-- Dashboard -->
+                <div class="content-card fade-in stagger-3">
+                    <div class="card-icon">📊</div>
+                    <h3>Komuta Merkezi Dashboard</h3>
+                    <p>
+                        Streamlit tabanlı interaktif analitik dashboard. Gerçek zamanlı
+                        şikayet takibi, coğrafi heatmap ve otomatik alarm sistemi ile
+                        operasyonel içgörüler.
+                    </p>
+                    <ul>
+                        <li>Net Duygu Skoru (NPS Proxy)</li>
+                        <li>İl bazlı şikayet ısı haritası</li>
+                        <li>Trend analizi ve anomali tespiti</li>
+                        <li>Slack/E-posta alarm entegrasyonu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Feasibility -->
+    <section id="feasibility" class="section feasibility">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mali Fizibilite Raporu</h2>
+                <p>5.000 satırlık MVP için maliyet analizi ve strateji</p>
+            </div>
+
+            <!-- Key Insight -->
+            <div class="insight-banner fade-in">
+                <div class="insight-icon">💡</div>
+                <div class="insight-content">
+                    <h4>Kritik Bulgu</h4>
+                    <p>5.000 satırlık profesyonel bir MVP, <strong>~50 USD</strong> (1.700 TL) toplam maliyetle hayata
+                        geçirilebilir. AI işleme maliyeti sadece <strong>0.65 USD</strong>!</p>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Cost Breakdown -->
+                <div class="content-card fade-in">
+                    <div class="card-icon">💰</div>
+                    <h3>Maliyet Kalemleri</h3>
+                    <div class="cost-table">
+                        <div class="cost-row header">
+                            <span>Kalem</span>
+                            <span>Maliyet</span>
+                        </div>
+                        <div class="cost-row">
+                            <span>Web Scraping (ZenRows/Scrape.do)</span>
+                            <span class="cost-value">$49-69</span>
+                        </div>
+                        <div class="cost-row">
+                            <span>AI İşleme (GPT-4o-mini)</span>
+                            <span class="cost-value highlight">$0.65</span>
+                        </div>
+                        <div class="cost-row">
+                            <span>Veritabanı (Supabase Free)</span>
+                            <span class="cost-value free">$0.00</span>
+                        </div>
+                        <div class="cost-row">
+                            <span>Hosting (GitHub Actions)</span>
+                            <span class="cost-value free">$0.00</span>
+                        </div>
+                        <div class="cost-row total">
+                            <span>Toplam (Dengeli Senaryo)</span>
+                            <span class="cost-value">~$50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenarios -->
+                <div class="content-card fade-in stagger-1">
+                    <div class="card-icon">📊</div>
+                    <h3>Senaryo Karşılaştırması</h3>
+                    <div class="scenario-grid">
+                        <div class="scenario cheapest">
+                            <h5>🟢 Bootstrapped</h5>
+                            <div class="scenario-price">$15</div>
+                            <p>Bright Data Pay-as-you-go + Lokal çalıştırma</p>
+                            <span class="scenario-note">Teknik uzmanlık gerektirir</span>
+                        </div>
+                        <div class="scenario recommended">
+                            <h5>🔵 Dengeli (Önerilen)</h5>
+                            <div class="scenario-price">$50</div>
+                            <p>ZenRows/Scrape.do paketi + Supabase</p>
+                            <span class="scenario-note">Sürpriz fatura riski yok</span>
+                        </div>
+                        <div class="scenario premium">
+                            <h5>🟡 Risk-Free</h5>
+                            <div class="scenario-price">$187</div>
+                            <p>Enterprise API + Managed DB + VPS</p>
+                            <span class="scenario-note">Kurumsal garanti</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Challenges -->
+                <div class="content-card fade-in stagger-2">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Teknik Zorluklar</h3>
+                    <p>Modern web siteleri gelişmiş anti-bot korumalarına sahiptir:</p>
+                    <ul>
+                        <li><strong>TLS Parmak İzi:</strong> Şifreleme protokolü analizi ile bot tespiti</li>
+                        <li><strong>Cloudflare Turnstile:</strong> Davranışsal analiz ve biyometrik kontroller</li>
+                        <li><strong>IP İtibarı:</strong> Veri merkezi IP'leri otomatik engellenir</li>
+                        <li><strong>JavaScript Challenge:</strong> Headless browser zorunluluğu</li>
+                    </ul>
+                </div>
+
+                <!-- AI Cost Magic -->
+                <div class="content-card fade-in stagger-3">
+                    <div class="card-icon">🤖</div>
+                    <h3>AI Token Ekonomisi</h3>
+                    <p>GPT-4o-mini ile 5.000 kayıt işleme maliyeti:</p>
+                    <div class="token-calc">
+                        <div class="token-row">
+                            <span>Girdi (2.5M token × $0.15/M)</span>
+                            <span>$0.375</span>
+                        </div>
+                        <div class="token-row">
+                            <span>Çıktı (0.45M token × $0.60/M)</span>
+                            <span>$0.270</span>
+                        </div>
+                        <div class="token-row total">
+                            <span>Toplam AI Maliyeti</span>
+                            <span>$0.645</span>
+                        </div>
+                    </div>
+                    <p class="token-note">Türkçe, İngilizce'ye göre ~1.7x daha fazla token tüketir (eklemeli yapı)</p>
+                </div>
+            </div>
+
+            <!-- Implementation Roadmap -->
+            <div class="roadmap fade-in">
+                <h3>3 Haftalık Uygulama Planı</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-week">
+                        <div class="week-header">
+                            <span class="week-num">Hafta 1</span>
+                            <span class="week-title">Altyapı Kurulumu</span>
+                        </div>
+                        <ul>
+                            <li>Supabase'de proje oluştur (Ücretsiz)</li>
+                            <li>OpenAI API key al, $5 yükle</li>
+                            <li>Scrape.do trial ile 200 satır test</li>
+                            <li>CSS Selector'ları belirle</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-week">
+                        <div class="week-header">
+                            <span class="week-num">Hafta 2</span>
+                            <span class="week-title">Veri Çekme & İşleme</span>
+                        </div>
+                        <ul>
+                            <li>Scraping paketini satın al ($49)</li>
+                            <li>Python script'i lokal çalıştır</li>
+                            <li>Her 100 veride DB'ye commit</li>
+                            <li>GPT-4o-mini ile zenginleştir</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-week">
+                        <div class="week-header">
+                            <span class="week-num">Hafta 3</span>
+                            <span class="week-title">Analiz & Raporlama</span>
+                        </div>
+                        <ul>
+                            <li>Streamlit dashboard oluştur</li>
+                            <li>Supabase'e bağlan</li>
+                            <li>Görselleştirmeleri ekle</li>
+                            <li>MVP tamamla 🎉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Notice -->
+            <div class="legal-notice fade-in">
+                <div class="legal-icon">⚖️</div>
+                <div class="legal-content">
+                    <h4>Yasal Uyum (KVKK)</h4>
+                    <p>AI işleme aşamasında kişisel veriler (isim, telefon, e-posta) otomatik olarak maskelenir.
+                        Veritabanında sadece anonimleştirilmiş veriler saklanır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Teknoloji Yığını</h2>
+                <p>Endüstri standardı araçlar ve kütüphaneler</p>
+            </div>
+
+            <div class="project-content">
+                <div class="content-card full-width fade-in">
+                    <h3>Kullanılan Teknolojiler</h3>
+                    <p>
+                        Projede kullanılan modern MLOps araçları ve Python ekosistemi
+                        bileşenleri. Ölçeklenebilir ve sürdürülebilir bir mimari hedeflenmektedir.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python 3.11+</span>
+                        <span class="tech-tag">Playwright</span>
+                        <span class="tech-tag">Turkish-Gemma-9b-T1</span>
+                        <span class="tech-tag">Hugging Face Transformers</span>
+                        <span class="tech-tag">Zemberek</span>
+                        <span class="tech-tag">spaCy</span>
+                        <span class="tech-tag">Prefect</span>
+                        <span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Bright Data Proxies</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-text">
+                ŞikayetLab © 2026 — Makine Öğrenmesi Projesi
+            </p>
+            <div class="footer-links">
+                <a href="#">Dokümantasyon</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
