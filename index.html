@@ -21,6 +21,7 @@
             <ul class="nav-links">
                 <li><a href="#phases">Aşamalar</a></li>
                 <li><a href="#overview">Proje</a></li>
+                <li><a href="#architecture">Mimari</a></li>
                 <li><a href="#feasibility">Fizibilite</a></li>
                 <li><a href="#tech">Teknoloji</a></li>
             </ul>
@@ -245,6 +246,175 @@
                         <li>Trend analizi ve anomali tespiti</li>
                         <li>Slack/E-posta alarm entegrasyonu</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Collection Architecture -->
+    <section id="architecture" class="section architecture-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Veri Toplama Mimarisi</h2>
+                <p>2 katmanlı hibrit strateji: Güvenilir temel + Akıllı keşif</p>
+            </div>
+
+            <!-- Architecture Visual Connector -->
+            <div class="arch-flow fade-in">
+                <div class="arch-flow-label">Veri Akışı</div>
+                <div class="arch-flow-line"></div>
+                <div class="arch-flow-arrows">
+                    <span class="arch-arrow arrow-left">Katman 1</span>
+                    <span class="arch-arrow-center">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v8M8 12h8" />
+                        </svg>
+                    </span>
+                    <span class="arch-arrow arrow-right">Katman 2</span>
+                </div>
+            </div>
+
+            <div class="arch-grid">
+                <!-- Katman 1 -->
+                <div class="arch-card arch-card--primary fade-in stagger-1">
+                    <div class="arch-card-header">
+                        <div class="arch-tier-badge tier-primary">
+                            <span class="tier-num">1</span>
+                            <span class="tier-label">KATMAN</span>
+                        </div>
+                        <h3 class="arch-card-title">Manuel Web Scraping</h3>
+                        <span class="arch-card-subtitle">Temel &amp; Güvenilir Kaynak</span>
+                    </div>
+
+                    <p class="arch-card-desc">
+                        Şikayetvar, forumlar (DonanımHaber, Technopat), Google Maps gibi
+                        bilinen sabit kaynaklardan <strong>derin ve yapılandırılmış</strong>
+                        veri çekme. Her site için özel scraper'lar yazılır.
+                    </p>
+
+                    <div class="arch-role">
+                        <div class="arch-role-icon">🎯</div>
+                        <div>
+                            <h5>Rolü</h5>
+                            <p>Projenin temel, güvenilir ve kontrol edilebilir veri kaynağı. Derin, yapılandırılmış veri
+                                sağlar.</p>
+                        </div>
+                    </div>
+
+                    <div class="arch-advantages">
+                        <h5>Avantajlar</h5>
+                        <ul>
+                            <li>Yüksek veri kalitesi ve tutarlılık</li>
+                            <li>Tam kontrol — her alan özelleştirilebilir</li>
+                            <li>Tekrarlanabilir ve güvenilir sonuçlar</li>
+                            <li>Derin veri çekme (yorumlar, tarihler, puanlar)</li>
+                        </ul>
+                    </div>
+
+                    <div class="arch-tech">
+                        <h5>Teknolojiler</h5>
+                        <div class="arch-tech-tags">
+                            <span class="tech-tag">Playwright</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">Stealth Plugin</span>
+                            <span class="tech-tag">Residential Proxy</span>
+                            <span class="tech-tag">CSS Selectors</span>
+                        </div>
+                    </div>
+
+                    <div class="arch-sources">
+                        <h5>Hedef Kaynaklar</h5>
+                        <div class="arch-source-list">
+                            <span class="arch-source">Şikayetvar</span>
+                            <span class="arch-source">DonanımHaber</span>
+                            <span class="arch-source">Technopat</span>
+                            <span class="arch-source">Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Katman 2 -->
+                <div class="arch-card arch-card--secondary fade-in stagger-2">
+                    <div class="arch-card-header">
+                        <div class="arch-tier-badge tier-secondary">
+                            <span class="tier-num">2</span>
+                            <span class="tier-label">KATMAN</span>
+                        </div>
+                        <h3 class="arch-card-title">AI Agent</h3>
+                        <span class="arch-card-subtitle">Opsiyonel Keşif Radarı</span>
+                    </div>
+
+                    <p class="arch-card-desc">
+                        LLM destekli otonom agent ile internette <strong>otomatik arama</strong>
+                        yaparak beklenmedik kaynakları keşfeder: bloglar, haber siteleri,
+                        sosyal medya ve niş forumlar.
+                    </p>
+
+                    <div class="arch-role">
+                        <div class="arch-role-icon">🔭</div>
+                        <div>
+                            <h5>Rolü</h5>
+                            <p>Değişen internette yeni kaynakları elle aramanın iş yükünü azaltır. Yüzeysel ama geniş
+                                kapsamlı keşif sağlar.</p>
+                        </div>
+                    </div>
+
+                    <div class="arch-advantages">
+                        <h5>Avantajlar</h5>
+                        <ul>
+                            <li>Otomatik yeni kaynak keşfi</li>
+                            <li>Geniş kapsam — tüm internet taranır</li>
+                            <li>Trend ve gündem takibi</li>
+                            <li>İnsan müdahalesi olmadan çalışabilir</li>
+                        </ul>
+                    </div>
+
+                    <div class="arch-tech">
+                        <h5>Teknolojiler</h5>
+                        <div class="arch-tech-tags">
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Tavily API</span>
+                            <span class="tech-tag">SerpAPI</span>
+                            <span class="tech-tag">LLM (GPT/Gemma)</span>
+                            <span class="tech-tag">Agent Framework</span>
+                        </div>
+                    </div>
+
+                    <div class="arch-sources">
+                        <h5>Keşfedilen Kaynaklar</h5>
+                        <div class="arch-source-list">
+                            <span class="arch-source discovery">Bloglar</span>
+                            <span class="arch-source discovery">Haber Siteleri</span>
+                            <span class="arch-source discovery">Sosyal Medya</span>
+                            <span class="arch-source discovery">Niş Forumlar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Banner -->
+            <div class="arch-summary fade-in stagger-3">
+                <div class="arch-summary-item">
+                    <span class="arch-summary-icon">⚙️</span>
+                    <div>
+                        <strong>Katman 1</strong> derin ve güvenilir veriyi üretir
+                    </div>
+                </div>
+                <div class="arch-summary-divider">+</div>
+                <div class="arch-summary-item">
+                    <span class="arch-summary-icon">🤖</span>
+                    <div>
+                        <strong>Katman 2</strong> yeni fırsatları keşfeder
+                    </div>
+                </div>
+                <div class="arch-summary-divider">=</div>
+                <div class="arch-summary-item result">
+                    <span class="arch-summary-icon">🚀</span>
+                    <div>
+                        <strong>Hibrit Strateji</strong> — kapsamlı veri havuzu
+                    </div>
                 </div>
             </div>
         </div>
